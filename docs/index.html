@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Anatomy Docs</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --soft:#cbd5e1; --muted:#94a3b8; --a1:#fb923c; --a2:#2dd4bf; --line:#334155; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--soft); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { color:var(--text); font-size: 2rem; margin: 0 0 .25rem; }
+  h2 { color:var(--text); font-size: 1.25rem; margin: 2.5rem 0 .75rem; border-bottom:1px solid var(--line); padding-bottom:.4rem; }
+  p { margin:.5rem 0; }
+  .lead { color:var(--muted); }
+  a { color:var(--a2); }
+  code { color:var(--a1); background:#0b1222; padding:1px 5px; border-radius:4px; font-size:.9em; }
+  pre { background:#0b1222; border:1px solid var(--line); border-radius:8px; padding:12px; overflow-x:auto; color:var(--text); font-size:.85rem; white-space:pre-wrap; word-break:break-word; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+  .card a { font-weight:600; text-decoration:none; }
+  .card p { color:var(--muted); font-size:.92rem; margin:.25rem 0 0; }
+  .tbl { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font-size:.92rem; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--text); background:var(--card); }
+  .tier { color:var(--a1); font-weight:600; white-space:nowrap; }
+  .note { border-left:3px solid var(--a1); background:var(--card); padding:10px 14px; border-radius:0 8px 8px 0; color:var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Anatomy — local docs</h1>
+  <p class="lead">An agent skill that explains a technical idea by building it as a working isometric machine. Skill source: <code>../anatomy-main/</code>. Written 2026-10-21.</p>
+  <p class="note">The links below open Markdown files. A browser shows them as plain text; open them in VS Code or any Markdown viewer for formatting.</p>
+
+  <h2>Start here</h2>
+  <div class="grid">
+    <div class="card"><a href="guides/try-it-cheaply.html">Try it cheaply</a><p>Examples from zero tokens to one small figure.</p></div>
+    <div class="card"><a href="getting-started/quickstart.html">Quickstart</a><p>Build, open and check an example in 2 minutes, Node only.</p></div>
+    <div class="card"><a href="getting-started/onboarding.html">Onboarding</a><p>The mental model, then one run end to end.</p></div>
+  </div>
+
+  <h2>Examples to try without spending much</h2>
+  <div class="tbl"><table>
+    <tr><th>Tier</th><th>Try this</th><th>Cost</th></tr>
+    <tr><td class="tier">0</td><td>Open <code>examples/raptor-engine/raptor-engine-light.html</code>, hover to take it apart, press <code>i</code> to fire</td><td>0 tokens</td></tr>
+    <tr><td class="tier">0</td><td><code>node examples/dial-indicator/build.mjs --light</code></td><td>0 tokens, ~0.6 s</td></tr>
+    <tr><td class="tier">0</td><td><code>node scripts/lines.mjs examples/dial-indicator/dial-indicator.html --out shots/lines.png</code></td><td>0 tokens, ~5 s</td></tr>
+    <tr><td class="tier">0</td><td>Read the committed A4 PDFs in <code>raptor-engine</code>, <code>arcade-cabinet</code>, <code>push-button</code></td><td>0 tokens</td></tr>
+    <tr><td class="tier">1</td><td>"/anatomy … LRU cache, capacity 4. Do steps 1–4 only. Write no code."</td><td>Few tokens: the metaphor and parts list, no build</td></tr>
+    <tr><td class="tier">1</td><td>"In examples/dial-indicator, add a fourth gauge block 6 px tall. Rebuild both themes and line-check."</td><td>Small diff on working code</td></tr>
+    <tr><td class="tier">2</td><td>"/anatomy token bucket: 20 tokens, refills 5/s, one per request, reject when empty. Figure size, interactive, one standalone HTML file, light theme, no WebGL."</td><td>One Figure (40–80 parts)</td></tr>
+    <tr><td class="tier">2</td><td>"/anatomy connection pool of 10, borrow and return, FIFO queue when all busy. Figure size, interactive, one standalone HTML file, light theme, no WebGL, no React."</td><td>One Figure; cheaper than eval 2's React + HTML</td></tr>
+  </table></div>
+  <p>Add a checkpoint to any tier-2 prompt: <code>Stop after the first working page opens, show me one capture, and wait.</code> The result is a draft: audit and close-ups have not run.</p>
+  <p>Avoid until you know the bill: WebGL, 3D, dense pipework, React + HTML together, Epic-sized subjects, print, publish.</p>
+
+  <h2>All docs</h2>
+  <div class="grid">
+    <div class="card"><a href="overview/what-is-this.html">What is Anatomy</a><p>The one idea; what it makes and does not make.</p></div>
+    <div class="card"><a href="overview/key-concepts.html">Key concepts</a><p>Figure vs figure, kit, card, audit, line check.</p></div>
+    <div class="card"><a href="guides/write-a-prompt.html">Write a prompt</a><p>Steering words, output forms, print and publish.</p></div>
+    <div class="card"><a href="guides/contribute.html">Contribute a change</a><p>House rules, CI, tests: 243 of 270 pass here.</p></div>
+    <div class="card"><a href="concepts/workflow.html">The workflow</a><p>The 10 steps, from "Size it" to "Verify like a critic".</p></div>
+    <div class="card"><a href="concepts/verification.html">Verification</a><p>Audit, line check, captures, orbit audit.</p></div>
+    <div class="card"><a href="reference/kit-and-scripts.html">Kit and scripts</a><p>Module map and every script flag.</p></div>
+    <div class="card"><a href="reference/examples.html">Examples</a><p>9 examples: controls, build times, byte-identical results.</p></div>
+    <div class="card"><a href="architecture/system-design.html">System design</a><p>How it fits, and the sourced design decisions.</p></div>
+    <div class="card"><a href="troubleshooting/common-issues.html">Common issues</a><p>Symptom, cause, fix.</p></div>
+  </div>
+</main>
+</body>
+</html>

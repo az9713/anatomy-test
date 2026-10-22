@@ -1,0 +1,10 @@
+anatomy-main/
+transcript.txt
+HANDOFF.md
+README.txt
+token-bucket/shots/*
+!token-bucket/shots/desktop.png
+!token-bucket/shots/reject.png
+!token-bucket/shots/phone.png
+!token-bucket/shots/dark.png
+.ignore/
